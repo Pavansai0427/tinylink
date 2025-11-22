@@ -11,6 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 
+
+
 app.get("/", (req, res) => {
   res.send("TinyLink Backend Running");
 });
@@ -27,7 +29,4 @@ app.get("/health", (req, res) => {
 
 app.use("/api/links", linksRouter);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Backend running at http://localhost:${PORT}`);
-});
+export default app;
