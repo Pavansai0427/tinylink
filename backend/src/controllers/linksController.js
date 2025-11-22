@@ -1,6 +1,6 @@
 import { pool } from "../db.js";
 
-// Validate URL
+
 function isValidUrl(str) {
   try {
     new URL(str);
@@ -44,12 +44,12 @@ export const createLink = async (req, res) => {
 
   let short = code;
 
-  // auto-generate code if not provided
+  
   if (!short) {
     short = Math.random().toString(36).substring(2, 10);
   }
 
-  // enforce 6-8 characters rule
+  
   if (!/^[A-Za-z0-9]{6,10}$/.test(short)) {
     return res.status(400).json({ error: "Code must be alphanumeric (6-10 chars)" });
   }
@@ -80,7 +80,7 @@ export const deleteLink = async (req, res) => {
   }
 };
 
-// 302 redirect logic
+
 export const redirectCode = async (req, res) => {
   const { code } = req.params;
 
@@ -106,7 +106,7 @@ export const redirectCode = async (req, res) => {
   }
 };
 
-// Health Check
+
 export const healthCheck = (req, res) => {
   res.json({
     ok: true,

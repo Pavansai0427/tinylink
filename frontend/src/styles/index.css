@@ -1,7 +1,7 @@
-/* Basic Reset */
+
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
 
-/* Layout */
+
 .site-header {
   background: #2b6ef6;
   padding: 12px 0;
@@ -26,17 +26,16 @@
 .nav-link { color: white; text-decoration: none; font-weight: 600; padding: 8px 12px; border-radius:6px; }
 .nav-link:hover { background: rgba(255,255,255,0.12); }
 
-/* Container */
+
 .container {
   max-width: 980px;
   margin: 22px auto;
   padding: 0 16px;
 }
 
-/* Page Title */
+
 .page-title { font-size: 22px; margin-bottom: 14px; color:#111; }
 
-/* Form box */
 .form-box {
   background: #fff;
   border: 1px solid #e6e6e6;
@@ -54,7 +53,7 @@
   font-size: 14px;
 }
 
-/* Two inputs + button layout */
+
 .input-url { flex: 1; }
 .input-code { width: 220px; }
 .btn-create {
@@ -68,7 +67,7 @@
 }
 .btn-create:disabled { opacity: 0.6; cursor: not-allowed; }
 
-/* Search */
+
 .search {
   margin: 12px 0;
 }
@@ -80,7 +79,7 @@
   font-size: 14px;
 }
 
-/* Table */
+
 .table-wrap { overflow-x: auto; margin-top: 12px; }
 .table {
   width: 100%;
@@ -105,14 +104,14 @@
 .btn-copy { background: #6b7280; color: white; }
 .btn-delete { background: #ef4444; color: white; }
 
-/* Empty state */
+
 .empty {
   padding: 22px;
   text-align: center;
   color: #666;
 }
 
-/* Footer */
+
 .site-footer {
   margin-top: 28px;
   text-align: center;
@@ -121,7 +120,7 @@
   background: #fafafa;
 }
 
-/* Responsive */
+
 @media (max-width: 720px) {
   .form-box { flex-direction: column; align-items: stretch; }
   .input-code { width: 100%; }

@@ -11,14 +11,14 @@ export default function Health() {
       try {
         const res = await axios.get("/healthz");
         setInfo(res.data);
-        // If the backend returns time or uptime, use it; else compute client-side start time approximation
+        
         if (res.data && res.data.server_time) {
           serverStart = new Date(res.data.server_time);
           setUptime(msToHuman(Date.now() - serverStart.getTime()));
         } else if (res.data && res.data.started_at) {
           setUptime(msToHuman(Date.now() - new Date(res.data.started_at).getTime()));
         } else {
-          // fallback: show client-observed load time
+          
           setUptime("Uptime not provided by server");
         }
       } catch (err) {

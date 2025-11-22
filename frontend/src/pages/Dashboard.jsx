@@ -9,15 +9,13 @@ export default function Dashboard() {
   const [q, setQ] = useState("");
   const [filterResult, setFilterResult] = useState([]);
 
-  // -------------------------------
-  // LOAD ALL LINKS
-  // -------------------------------
+
   const loadLinks = async () => {
     setLoading(true);
     try {
       const res = await axios.get("/api/links");
 
-      // SAFE: supports both formats → [] or {links:[]}
+      
       const result = Array.isArray(res.data)
         ? res.data
         : Array.isArray(res.data.links)
@@ -39,9 +37,7 @@ export default function Dashboard() {
     loadLinks();
   }, []);
 
-  // -------------------------------
-  // SEARCH FILTER
-  // -------------------------------
+
   useEffect(() => {
     const term = q.trim().toLowerCase();
     if (!term) {
@@ -59,9 +55,7 @@ export default function Dashboard() {
     setFilterResult(filtered);
   }, [q, links]);
 
-  // -------------------------------
-  // CREATE LINK
-  // -------------------------------
+
   const createLink = async ({ url, code }) => {
     try {
       const payload = { url };
@@ -69,7 +63,7 @@ export default function Dashboard() {
 
       const res = await axios.post("/api/links", payload);
 
-      // Support both array/object backend output
+      
       const newLink = res.data.link ?? res.data;
 
       setLinks((prev) => [newLink, ...prev]);
@@ -85,9 +79,7 @@ export default function Dashboard() {
     }
   };
 
-  // -------------------------------
-  // DELETE LINK
-  // -------------------------------
+
   const deleteLink = async (code) => {
     try {
       await axios.delete(`/api/links/${code}`);
@@ -99,9 +91,7 @@ export default function Dashboard() {
     }
   };
 
-  // ---------------------------------------------------
-  // UI RENDER
-  // ---------------------------------------------------
+
   return (
     <div>
       <h2 className="page-title">Dashboard</h2>

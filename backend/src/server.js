@@ -10,12 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// simple test route
+
 app.get("/", (req, res) => {
   res.send("TinyLink Backend Running");
 });
 
-// healthcheck
+
 app.get("/health", (req, res) => {
   res.json({
     status: "ok",
@@ -24,7 +24,7 @@ app.get("/health", (req, res) => {
   });
 });
 
-// routes
+
 app.use("/api/links", linksRouter);
 
 const PORT = process.env.PORT || 5000;
